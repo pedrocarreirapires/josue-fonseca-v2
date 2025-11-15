@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josué Fonseca - Psychologist</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papJ+0+...==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+
+<body class="font-sans text-gray-900 scroll-smooth">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full bg-white shadow z-50" style="background-color: #4A392F;">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo à esquerda -->
+            <a href="#hero" class="flex-shrink-0">
+                <img src="img/nav.png" alt="Josué Fonseca" class="h-12 w-auto object-contain">
+            </a>
+
+            <!-- Links desktop -->
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#hero" class="nav-link">Início</a></li>
+                <li><a href="#services" class="nav-link">Serviços</a></li>
+                <li><a href="#team" class="nav-link">Equipa</a></li>
+                <li><a href="#feedbacks" class="nav-link">Testemunhos</a></li>
+                <li><a href="#contact" class="nav-link">Contacto</a></li>
+            </ul>
+
+            <!-- Botão menu mobile -->
+            <button class="md:hidden" id="menu-toggle">☰</button>
+        </div>
+
+        <!-- Menu mobile -->
+        <ul class="nav-mobile hidden flex-col bg-white shadow p-4 space-y-2 md:hidden">
+            <li><a href="#hero" class="nav-link">Home</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#team" class="nav-link">Team</a></li>
+            <li><a href="#feedbacks" class="nav-link">Feedback</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+
+<!-- Hero Section Interativo -->
+<section id="hero" class="relative h-[85vh] flex flex-col justify-center items-center text-center overflow-hidden bg-gray-900">
+    <!-- Background Parallax -->
+    <div id="hero-bg" class="absolute inset-0">
+        <img src="img/banner.jpg" alt="Hero" class="w-full h-full object-cover brightness-60">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/70"></div>
+    </div>
+
+    <!-- Partículas que seguem o cursor -->
+    <canvas id="heroParticles" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 px-6 md:px-12">
+        <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4 drop-shadow-lg animate-slideIn">
+            Josué Fonseca
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed animate-fadeIn">
+            Treina a mente como treinas o corpo. Inspira. Ataca. Evolui.
+        </p>
+        <div class="flex justify-center gap-4 flex-wrap">
+            <button onclick="scrollToContact()"
+                class="px-8 py-3 bg-gradient-to-r from-orange-400 to-red-500 text-white font-semibold rounded-xl shadow-2xl hover:scale-105 hover:shadow-orange-500/50 transition-transform duration-300">
+                Contact Me
+            </button>
+        </div>
+    </div>
+</section>
+
+
+    <!-- About Me Section -->
+    <section id="about" class="max-w-4xl mx-auto px-4 py-20 flex flex-col md:flex-row items-center gap-8">
+        <img src="img/contact.jpg" alt="Josué Fonseca" class="rounded-lg w-64 h-64 object-cover shadow-lg">
+        <div>
+            <h2 class="text-4xl font-montserrat mb-4">Sobre Mim</h2>
+            <p class="text-lg md:text-xl text-gray-700">
+                Sentes que o teu desporto, aquilo que mais amavas, está a começar a desgastar-te — e não sabes como
+                mudar isso?
+                Eu também já o senti. O meu nome é Josué e, provavelmente tal como tu, cresci a sonhar uma coisa: ser
+                atleta
+                profissional
+                Pratiquei e competi em várias modalidades - desde futebol, natação, voleibol, a futebol americano.
+                Ganhei
+                medalhas, fui capitão, adorei competir. Por fora, parecia estar tudo bem! Mas por dentro… nem sempre era
+                assim... Saber Mais
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="max-w-7xl mx-auto px-4 py-20">
+        <h2 class="text-4xl font-montserrat text-center mb-12">Serviços</h2>
+
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-center gap-6 md:gap-8">
+
+            <!-- Left Column: Serviço1 + Serviço3 -->
+            <div class="flex flex-col gap-4">
+                <!-- Serviço 1 -->
+                <div class="service-card bg-white p-4 rounded-lg shadow hover:shadow-xl hover:-translate-y-1 transition w-90 text-center cursor-pointer"
+                    data-title="Consulta de Psicologia Desportiva para Atletas" data-desc="<p>Sessões especializadas para <strong>Atletas</strong>, focadas em desenvolver as <strong>ferramentas psicológicas</strong> necessárias para lidar com as exigências desportivas, <strong>dentro e fora do desporto</strong>.</p></br>
+                                <ul class='text-left space-y-2'>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Gestão de ansiedade e pressão competitiva
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Reforço da confiança e autoestima
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Manutenção do foco e concentração
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Recuperação após erros ou lesões
+                                    </li>
+                                </ul>
+                    </br>  <p><strong>Duração:</strong> 50 mins a 1h<br><strong>Local:</strong> Online</p>">
+                    <h3 class="font-semibold text-lg mb-2">Consulta de Psicologia Desportiva para Atletas</h3>
+                </div>
+                <!-- Serviço 3 -->
+                <div class="service-card bg-white p-4 rounded-lg shadow hover:shadow-xl hover:-translate-y-1 transition w-90 text-center cursor-pointer"
+                    data-title="Aconselhamento Parental" data-desc="<p>Sessões direcionadas a <strong>pais/mães</strong> e <strong>encarregados(as) de educação</strong> de atletas, com o objetivo de oferecer <strong>orientações práticas</strong> para apoiar o desenvolvimento desportivo e emocional dos seus <strong>filhos</strong>.</p></br>
+                                <ul class='text-left space-y-2'>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Apoiar a confiança e autoestima do jovem atleta
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Gerir expectativas e lidar com pressões externas
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Comunicação eficaz para encorajar sem pressionar
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Apoio na superação de falhas e desafios desportivos
+                                    </li>
+                                </ul>
+                            </br> 
+                     <p><strong>Duração:</strong> 50 mins a 1h<br><strong>Local:</strong> Online</p>">
+                    <h3 class="font-semibold text-lg mb-2">Aconselhamento Parental</h3>
+                </div>
+            </div>
+
+            <!-- Brain central -->
+            <div class="flex justify-center self-center h-auto">
+                <img src="img/small_logo.png" alt="Brain" class="h-64 w-48 animate-pulse-custom object-contain">
+            </div>
+
+            <!-- Right Column: Serviço2 + Serviço4 -->
+            <div class="flex flex-col gap-4">
+                <!-- Serviço 2 -->
+                <div class="service-card bg-white p-4 rounded-lg shadow hover:shadow-xl hover:-translate-y-1 transition w-90 text-center cursor-pointer"
+                    data-title="Acompanhamento Psicológico de Equipas"
+                    data-desc="<p>Intervenções direcionadas a <strong>equipas desportivas</strong> com objetivo de melhorar a dinâmica coletiva, ‘balneário’ e rendimento global.</p></br>
+                                <ul class='text-left space-y-2'>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Coesão e comunicação eficaz
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Desenvolvimento de liderança e motivação
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Gestão de conflitos e ambiente competitivo saudável
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Preparação mental para competições
+                                    </li>
+                                </ul>
+                            </br>
+                      <p><strong>Duração:</strong> 30 mins a 1h<br><strong>Local:</strong> Espaço de Treinos do próprio Clube</p>">
+                    <h3 class="font-semibold text-lg mb-2">Acompanhamento Psicológico de Equipas</h3>
+                </div>
+
+                <!-- Serviço 4 -->
+                <div class="service-card bg-white p-4 rounded-lg shadow hover:shadow-xl hover:-translate-y-1 transition w-90 text-center cursor-pointer"
+                    data-title="Acompanhamento Psicológico de Treinadores" data-desc="<p>Sessões para apoiar <strong>Treinadores</strong> no desenvolvimento das competências psicológicas e gestão emocional das exigências desportivas.</p> </br>
+                                <ul class='text-left space-y-2'>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Gestão de stress e pressão na tomada de decisões
+                                    </li>
+                                        <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Melhoria da comunicação com atletas e staff técnico
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Desenvolvimento de estratégias motivacionais eficazes
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Gestão de conflitos e resolução de problemas
+                                    </li>
+                                </ul> 
+                            </br>
+                      <p><strong>Duração:</strong> 50 mins a 1h<br><strong>Local:</strong> Online</p>">
+                    <h3 class="font-semibold text-lg mb-2">Acompanhamento Psicológico de Treinadores</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+<!-- Team Section -->
+<section id="team" class="max-w-5xl mx-auto px-6 py-20 bg-gradient-to-b from-gray-50 to-gray-100 relative">
+    <h2 class="text-4xl font-montserrat text-center mb-12">Conhece a Equipa</h2>
+
+    <div class="relative border-l-4 border-orange-500">
+
+        <!-- Member 1 -->
+        <div class="team-card mb-16 ml-8 flex flex-col md:flex-row md:items-center group cursor-pointer"
+            data-title="Emanuel Dias" data-desc="<div class='w-24 h-24 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105'>
+                <img src='img/team1.jpg' alt='Emanuel Dias' class='w-full h-full object-cover'>
+            </div>
+                                <ul class='text-left space-y-2'>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Mestrado em Psicologia da Educação e do Desenvolvimento Humano
+                                    </li>
+                                        <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Especialização Avançada em Psicologia do Desporto, Exercício e Performance
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Formação em Equipas de Alto Desempenho pela OPP
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Experiência em clubes como Dragon Force FC Porto e Arsenal Clube da Maia
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Experiência nas modalidades de Futebol, Futsal, Hóquei, Andebol, Voleibol, Atletismo e Natação Artística
+                                    </li>
+                                </ul> 
+                            </br>">
+            <div class="w-24 h-24 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105">
+                <img src="img/team1.jpg" alt="Emanuel Dias" class="w-full h-full object-cover">
+            </div>
+            <div class="bg-white rounded-2xl shadow-md p-6 mt-4 md:mt-0 md:w-3/4 hover:shadow-lg transition text-center md:text-left">
+                <h3 class="text-xl font-semibold text-gray-800">Emanuel Dias</h3>
+                <p class="text-orange-600 font-medium mb-2">Psicólogo</p>
+                <p class="text-gray-600 truncate">Especialista em performance desportiva e gestão emocional de atletas profissionais.</p>
+            </div>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="team-card mb-16 ml-8 flex flex-col md:flex-row-reverse md:items-center group cursor-pointer"
+            data-title="Tiago Costa" data-desc="<div class='w-24 h-24 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105'>
+                <img src='img/team2.jpg' alt='Tiago Costa' class='w-full h-full object-cover'>
+            </div>
+                                <ul class='text-left space-y-2'>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Mestrado em Psicologia Clínica e da Saúde
+                                    </li>
+                                        <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Especialização Avançada em Psicologia do Desporto, Exercício e Performance
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Formação em Psicologia do Alto Rendimento e Desenvolvimento de Atletas pelo Barcelona Innovation Hub
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Experiência em clubes como Dragon Force FC Porto e Académico FC
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Experiência nas modalidades de Futebol, Andebol, Basquetebol, Hóquei, Patinagem de Velocidade, Surf, Ténis, Ginástica Rítmica, Ciclismo, Golf e Bilhar
+                                    </li>
+                                </ul> 
+                            </br>"><div class="w-24 h-24 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:ml-8 transform transition group-hover:scale-105">
+                <img src="img/team2.jpg" alt="Tiago Costa" class="w-full h-full object-cover">
+            </div>
+            <div class="bg-white rounded-2xl shadow-md p-6 mt-4 md:mt-0 md:w-3/4 hover:shadow-lg transition text-center md:text-left">
+                <h3 class="text-xl font-semibold text-gray-800">Tiago Costa</h3>
+                <p class="text-orange-600 font-medium mb-2">Psicólogo</p>
+                <p class="text-gray-600 truncate">Focado em acompanhamento psicológico de equipas e treinadores para otimizar a coesão e motivação.</p>
+            </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="team-card mb-16 ml-8 flex flex-col md:flex-row md:items-center group cursor-pointer"
+            data-title="Andreia Ferraz" data-desc="<div class='w-24 h-24 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105'>
+                <img src='img/team3.jpg' alt='Andreia Ferraz' class='w-full h-full object-cover'>
+            </div>
+                                <ul class='text-left space-y-2'>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Mestrado em Psicologia com especialização em Psicologia das Organizações, Social e do Trabalho
+                                    </li>
+                                        <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Formação em Psicologia para o Treinador no Alto Rendimento e Desenvolvimento de Atletas pelo Barcelona Innovation Hub, e Psicologia para o Alto Rendimento pelo FC Porto Football Sciences Institute
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Experiência em clubes como Boavista FC, FC Porto e SC Braga
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Experiência nas modalidades de Futebol, Ginástica, Basquetebol, Hóquei, Voleibol, Remo, Canoagem, Ténis de Mesa, Patinagem Artística, Natação, Badminton e Esgrima
+                                    </li>
+                                </ul> 
+                            </br>"><div class="w-24 h-24 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105">
+                <img src="img/team3.JPG" alt="Andreia Ferraz" class="w-full h-full object-cover">
+            </div>
+            <div class="bg-white rounded-2xl shadow-md p-6 mt-4 md:mt-0 md:w-3/4 hover:shadow-lg transition text-center md:text-left">
+                <h3 class="text-xl font-semibold text-gray-800">Andreia Ferraz</h3>
+                <p class="text-orange-600 font-medium mb-2">Psicóloga</p>
+                <p class="text-gray-600 truncate">Trabalha com atletas jovens no desenvolvimento da autoconfiança e foco competitivo.</p>
+            </div>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="team-card mb-16 ml-8 flex flex-col md:flex-row-reverse md:items-center group cursor-pointer"
+            data-title="Catarina Ribeiro" data-desc="<div class='w-24 h-24 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105'>
+                <img src='img/team4.png' alt='Catarina Ribeiro' class='w-full h-full object-cover'>
+            </div>
+                                <ul class='text-left space-y-2'>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Mestrado integrado em Psicologia Clínica
+                                    </li>
+                                        <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Formação em Intervenção em Psicologia do Desporto pela Reconstruir
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Experiência em clubes como Vitória Sport Clube
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Experiência nas modalidades de Voleibol, Andebol, Basquetebol, Futebol, Pólo Aquático, Xadrez, Atletismo, Patinagem e Hóquei e Desportos de Combate
+                                    </li>
+                                </ul> 
+                            </br>"><div class="w-24 h-24 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:ml-8 transform transition group-hover:scale-105">
+                <img src="img/team4.png" alt="Catarina Ribeiro" class="w-full h-full object-cover">
+            </div>
+            <div class="bg-white rounded-2xl shadow-md p-6 mt-4 md:mt-0 md:w-3/4 hover:shadow-lg transition text-center md:text-left">
+                <h3 class="text-xl font-semibold text-gray-800">Catarina Ribeiro</h3>
+                <p class="text-orange-600 font-medium mb-2">Psicóloga</p>
+                <p class="text-gray-600 truncate">Acompanha atletas em reabilitação física, trabalhando o equilíbrio entre corpo e mente.</p>
+            </div>
+        </div>
+
+        <!-- Member 5 -->
+        <div class="team-card mb-16 ml-8 flex flex-col md:flex-row md:items-center group cursor-pointer"
+            data-title="Nuno Ferreira" data-desc="<div class='w-24 h-24 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105'>
+                <img src='img/team5.png' alt='Nuno Ferreira' class='w-full h-full object-cover'>
+            </div>
+                                <ul class='text-left space-y-2'>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Mestrado em Psicologia Clínica e da Saúde
+                                    </li>
+                                        <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Formação em Psicologia do Desporto no FC Porto pela Quest
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Formação em Intervenção em Psicologia do Desporto pela Reconstruir
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Experiência em clubes como Sporting Clube Braga
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Experiência nas modalidades de Atletismo, Triatlo, Andebol, Basquetebol, Voleibol, Bilhar, Boccia, Futsal, KickBoxing, Boxe, Muay Thai, Taekwondo, Judo, Natação, Badminton, Esports, Ténis, Futebol e Padel
+                                    </li>
+                                </ul> 
+                            </br>"><div class="w-24 h-24 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105">
+                <img src="img/team5.png" alt="Nuno Ferreira" class="w-full h-full object-cover">
+            </div>
+            <div class="bg-white rounded-2xl shadow-md p-6 mt-4 md:mt-0 md:w-3/4 hover:shadow-lg transition text-center md:text-left">
+                <h3 class="text-xl font-semibold text-gray-800">Nuno Ferreira</h3>
+                <p class="text-orange-600 font-medium mb-2">Psicólogo</p>
+                <p class="text-gray-600 truncate">Experiente em psicologia de alto rendimento e gestão de pressão competitiva.</p>
+            </div>
+        </div>
+
+        <!-- Member 6 -->
+        <div class="team-card ml-8 flex flex-col md:flex-row-reverse md:items-center group cursor-pointer"
+            data-title="Mónica Silva" data-desc="<div class='w-24 h-24 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105'>
+                <img src='img/team6.png' alt='Mónica Silva' class='w-full h-full object-cover'>
+            </div>
+                                <ul class='text-left space-y-2'>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Mestrado Integrado em Psicologia Clínica e da Saúde
+                                    </li>
+                                        <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Doutoramento em Psicologia Clínica
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Pós-graduação em Psicologia do Desporto pelo INSPSIC
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Experiência em clubes como Boavista Futebol Clube
+                                    </li>
+                                    <li class='flex items-center'>
+                                        <span class='text-orange-500 mr-2'>✓</span>
+                                        Experiência nas modalidades de Futebol de Formação, Futebol Sénior e Futsal
+                                    </li>
+                                </ul> 
+                            </br>"><div class="w-24 h-24 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:ml-8 transform transition group-hover:scale-105">
+                <img src="img/team6.png" alt="Mónica Silva" class="w-full h-full object-cover">
+            </div>
+            <div class="bg-white rounded-2xl shadow-md p-6 mt-4 md:mt-0 md:w-3/4 hover:shadow-lg transition text-center md:text-left">
+                <h3 class="text-xl font-semibold text-gray-800">Mónica Silva</h3>
+                <p class="text-orange-600 font-medium mb-2">Psicóloga</p>
+                <p class="text-gray-600 truncate">Especialista em desenvolvimento pessoal e bem-estar mental no contexto desportivo.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    
+
+
+    <!-- Feedback Section -->
+    <section id="feedbacks" class="max-w-7xl mx-auto px-4 py-20">
+        <h2 class="text-4xl font-montserrat text-center mb-12">Testemunhos</h2>
+        <div class="feedback-carousel relative overflow-hidden">
+            <div class="flex transition-transform duration-500" id="feedback-container">
+                <div class="feedback-card min-w-full p-6 bg-orange-50 rounded-lg shadow text-center">
+                    <p>"Quando contactei o Josué o objetivo era ajudar o meu filho a
+                        recuperar a confiança e a alegria que tinha a jogar futebol. <br>
+
+                        Tinha receio de voltar a errar, ficando mais nervoso, com dores de cabeça e barriga,
+                        chegando a pedir para não jogar com medo de voltar a errar.<br>
+
+                        Na primeira sessão o meu filho estava muito apreensivo por não conhecer o Psicólogo,
+                        mas logo essa apreensão desapareceu e o meu filho partilhou com situações que nunca
+                        tinha conseguido falar comigo.<br>
+
+                        O meu filho conseguiu adotar estratégias para lidar melhor com as inseguranças e
+                        comentários menos positivos dos colegas. Não só foram exclusivas para o desporto mas
+                        também para a escola, conseguindo melhorar a sua ansiedade antes dos testes e lidar
+                        melhor com as emoções.<br>
+
+                        Um obrigada por ajudar o meu filho a recuperar a confiança e a alegria no
+                        futebol."</p>
+                    <span class="block mt-4 font-semibold">— Atleta, 16 anos</span>
+                </div>
+                <div class="feedback-card min-w-full p-6 bg-orange-50 rounded-lg shadow text-center">
+                    <p>"Professional, empathetic, and very supportive."</p>
+                    <span class="block mt-4 font-semibold">— Client B</span>
+                </div>
+                <div class="feedback-card min-w-full p-6 bg-orange-50 rounded-lg shadow text-center">
+                    <p>"Workshops were insightful and engaging."</p>
+                    <span class="block mt-4 font-semibold">— Client C</span>
+                </div>
+                <div class="feedback-card min-w-full p-6 bg-orange-50 rounded-lg shadow text-center">
+                    <p>"Workshops were insightful and engaging."</p>
+                    <span class="block mt-4 font-semibold">— Client C</span>
+                </div>
+                <div class="feedback-card min-w-full p-6 bg-orange-50 rounded-lg shadow text-center">
+                    <p>"Workshops were insightful and engaging."</p>
+                    <span class="block mt-4 font-semibold">— Client C</span>
+                </div>
+            </div>
+            <button
+                class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow prev-btn">‹</button>
+            <button
+                class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow next-btn">›</button>
+            <div class="flex justify-center mt-4 space-x-2" id="feedback-dots"></div>
+        </div>
+    </section>
+
+<!-- Contact Section -->
+<section id="contact" class="max-w-5xl mx-auto px-6 py-24 bg-gradient-to-b from-orange-50 to-white relative overflow-hidden">
+    <!-- Background shapes for creativity -->
+    <div class="absolute -top-20 -left-20 w-80 h-80 bg-orange-200 rounded-full opacity-20 animate-pulse"></div>
+    <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-orange-300 rounded-full opacity-15 animate-pulse"></div>
+
+    <div class="text-center mb-16">
+        <h2 class="text-4xl font-montserrat text-center mb-12">Queres saber mais sobre as consultas? <br> Fala connosco!</h2>
+        <p class="text-lg text-orange-700">Preenche com os teus dados e descobre como te podemos ajudar a melhorar o teu bem-estar.</p>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+        <!-- Image Container -->
+        <div class="flex justify-center md:justify-start w-full md:w-auto">
+            <div class="overflow-hidden rounded-full w-48 h-48 md:w-56 md:h-56 shadow-lg border-4 border-orange-200 transform transition-transform duration-500 hover:scale-105">
+                <img src="img/contact.jpg" alt="Josué" class="w-full h-full object-cover">
+            </div>
+        </div>
+
+        <!-- Form -->
+        <form id="contact-form" class="flex-1 bg-white p-8 md:p-10 rounded-2xl shadow-xl space-y-6">
+            <input type="text" name="name" placeholder="Nome completo"
+                   class="w-full p-4 border border-orange-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 placeholder-orange-500"
+                   required>
+            <input type="email" name="email" placeholder="Email"
+                   class="w-full p-4 border border-orange-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 placeholder-orange-500"
+                   required>
+            <textarea name="message" placeholder="Mensagem" rows="5"
+                      class="w-full p-4 border border-orange-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 placeholder-orange-500"
+                      required></textarea>
+            <button type="submit"
+                    class="w-full py-4 bg-orange-600 text-white font-semibold rounded-lg shadow-md hover:bg-orange-700 transition-all duration-300">Enviar Mensagem</button>
+            <p id="form-success" class="hidden text-orange-600 font-semibold mt-2 text-center">Mensagem enviada com sucesso!</p>
+        </form>
+    </div>
+</section>
+
+
+    <!-- Floating Contact Button -->
+    <button onclick="scrollToContact()"
+        class="fixed bottom-6 right-6 bg-orange-400 text-white p-4 rounded-full shadow-lg hover:bg-orange-500 transition z-50">✉</button>
+
+    <!-- Service & Team Modals -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
+        <div class="bg-white p-6 rounded-lg max-w-md w-full relative">
+            <button id="modal-close"
+                class="absolute top-2 right-2 text-gray-500 hover:text-gray-900 text-2xl">&times;</button>
+            <h3 class="text-2xl font-semibold mb-4" id="modal-title"></h3>
+            <p id="modal-desc" class="mb-6"></p>
+            <button onclick="scrollToContact(); closeModal()"
+                class="px-6 py-3 bg-orange-500 text-white rounded shadow hover:bg-orange-600 transition">Contact</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+<footer class="text-gray-200 pt-12 pb-6" style="background-color: #4A392F;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+            <!-- Logo + Descrição -->
+            <div>
+                <img src="img/small_logo.png" alt="Logo" class="h-12 mb-4">
+                <p class="text-gray-400 text-sm">Especialistas em Psicologia Desportiva, ajudando atletas, equipas e treinadores a alcançarem o máximo desempenho.</p>
+            </div>
+
+            <!-- Links Rápidos -->
+            <div>
+                <h3 class="text-white font-semibold mb-4">Links Rápidos</h3>
+                <ul class="space-y-2">
+                    <li><a href="#services" class="hover:text-orange-500 transition">Serviços</a></li>
+                    <li><a href="#team" class="hover:text-orange-500 transition">Equipa</a></li>
+                    <li><a href="#about" class="hover:text-orange-500 transition">Sobre</a></li>
+                    <li><a href="#contact" class="hover:text-orange-500 transition">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Contactos -->
+            <div>
+                <h3 class="text-white font-semibold mb-4">Contacto</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li>Email: <a href="mailto:info@psicologiadesportiva.com" class="hover:text-orange-500 transition">info@josue.com</a></li>
+                    <li>Telefone: <a href="tel:+351912345678" class="hover:text-orange-500 transition">+351 91x xxx xxx</a></li>
+                    <li>Morada: Rua do Desporto 123, Lisboa, Portugal</li>
+                </ul>
+            </div>
+
+            <!-- Redes Sociais -->
+            <div>
+                <h3 class="text-white font-semibold mb-4">Redes Sociais</h3>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-orange-500 transition text-2xl" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="hover:text-orange-500 transition text-2xl" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#" class="hover:text-orange-500 transition text-2xl" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="hover:text-orange-500 transition text-2xl" aria-label="linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="hover:text-orange-500 transition text-2xl" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="#" class="hover:text-orange-500 transition text-2xl" aria-label="Youtube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Divider -->
+        <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm">
+            &copy; 2025 Psicologia Desportiva. Todos os direitos reservados.
+        </div>
+    </div>
+</footer>
+
+
+    <script src="script.js"></script>
+    <script src="tailwind.config.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+1️⃣ Criar pasta do projeto
+# Escolhe um caminho simples sem espaços ou acentos
+mkdir C:\Projetos\tailwind-project
+cd C:\Projetos\tailwind-project
+
+2️⃣ Inicializar projeto Node
+npm init -y
+
+Isto cria o package.json.
+
+3️⃣ Instalar Tailwind e dependências
+# Instala Tailwind, PostCSS e Autoprefixer
+npm install -D tailwindcss postcss autoprefixer
+
+4️⃣ Instalar Tailwind globalmente (evita problemas com npx)
+npm install -g tailwindcss
+
+5️⃣ Criar arquivos de configuração do Tailwind
+tailwindcss init -p
+Isto cria:
+tailwind.config.js → para personalizar cores, fontes, breakpoints.
+postcss.config.js → usado no build do CSS.
+
+6️⃣ Criar CSS base
+Cria uma pasta src e um ficheiro input.css dentro dela:
+mkdir src
+notepad src\input.css
+
+
+Conteúdo de input.css:
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+7️⃣ Criar HTML inicial
+Cria index.html:
+notepad index.html
+
+8️⃣ Build do CSS
+# Cria a pasta dist e gera CSS final
+mkdir dist
+tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+
+
+-i → input CSS
+-o → output CSS final
+
+--watch → atualiza automaticamente quando editas o input.css
