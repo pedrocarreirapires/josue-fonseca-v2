@@ -30,8 +30,6 @@ h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: #4A392F; }
 .custom-orange {
   color: #E34224;
 }
-
-
 .custom-orange-ring {
   box-shadow: 0 0 0 4px #E34224; /* equivale ao ring-4 do Tailwind */
   
