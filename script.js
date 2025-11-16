@@ -65,8 +65,8 @@ cards.forEach((_, i) => {
 const dots = Array.from(dotsContainer.children);
 
 function updateDots() {
-  dots.forEach(dot => dot.classList.remove('bg-green-500'));
-  dots[currentIndex].classList.add('bg-green-500');
+  dots.forEach(dot => dot.classList.remove('bg-orange-500'));
+  dots[currentIndex].classList.add('bg-orange-500');
 }
 
 function goToSlide(index){
@@ -100,7 +100,7 @@ goToSlide(0);
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-link');
 
-window.addEventListener('scroll', () => {
+function updateNavbar() {
   let current = '';
   const scrollPos = window.scrollY + 120; // offset navbar
   sections.forEach(section => {
@@ -108,12 +108,19 @@ window.addEventListener('scroll', () => {
   });
 
   navLinks.forEach(link => {
-    link.classList.remove('text-green-500', 'font-semibold');
+    link.classList.remove('text-orange-500', 'font-semibold');
     if(link.getAttribute('href') === `#${current}`) {
-      link.classList.add('text-green-500', 'font-semibold');
+      link.classList.add('text-orange-500', 'font-semibold');
     }
   });
-});
+}
+
+// Chama ao scroll
+window.addEventListener('scroll', updateNavbar);
+
+// Chama no carregamento da página para ativar a primeira seção
+window.addEventListener('load', updateNavbar);
+
 
 
 // Partículas JS 
