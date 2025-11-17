@@ -69,9 +69,10 @@ function updateDots() {
   dots[currentIndex].classList.add('bg-orange-500');
 }
 
-function goToSlide(index){
+function goToSlide(index) {
+  const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(cards[0]).marginRight);
+  container.style.transform = `translateX(-${index * cardWidth}px)`;
   currentIndex = index;
-  container.style.transform = `translateX(-${index*100}%)`;
   updateDots();
 }
 
@@ -168,3 +169,21 @@ drawParticles();
       }
     }
   }
+
+
+  //floating
+  function openContactModal() {
+    document.getElementById('contact-modal').classList.remove('hidden');
+}
+
+function closeContactModal() {
+    document.getElementById('contact-modal').classList.add('hidden');
+}
+
+// Optional: submit handling
+document.getElementById('modal-contact-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    // aqui podes fazer o AJAX ou fetch
+    document.getElementById('modal-form-success').classList.remove('hidden');
+    this.reset();
+});

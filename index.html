@@ -15,38 +15,51 @@
 
 <body class="font-sans text-gray-900 scroll-smooth">
 
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 w-full bg-white shadow z-50" style="background-color: #4A392F;">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-            <!-- Logo à esquerda -->
-            <a href="#hero" class="flex-shrink-0">
-                <img src="img/nav.png" alt="Josué Fonseca" class="h-12 w-auto object-contain">
-            </a>
+  <!-- NAVBAR FUTURISTA -->
+<nav class="fixed top-0 left-0 w-full z-50
+            bg-black/30 backdrop-blur-xl 
+            border-b border-white/10 
+            shadow-[0_8px_30px_rgb(0,0,0,0.25)]
+            transition-all duration-300">
 
-            <!-- Links desktop -->
-            <ul class="hidden md:flex space-x-6" style="color: white;">
-                <li><a href="#hero" class="nav-link">Início</a></li>
-                <li><a href="#about" class="nav-link">Sobre Mim</a></li>
-                <li><a href="#services" class="nav-link">Serviços</a></li>
-                <li><a href="#team" class="nav-link">Equipa</a></li>
-                <li><a href="#feedbacks" class="nav-link">Testemunhos</a></li>
-                <li><a href="#contact" class="nav-link">Contacto</a></li>
-            </ul>
+    <div class="max-w-7xl mx-auto px-8 py-4 
+                flex justify-between items-center">
 
-            <!-- Botão menu mobile -->
-            <button class="md:hidden" id="menu-toggle">☰</button>
-        </div>
+        <!-- LOGO -->
+        <a href="#hero" class="nav-link">
+            <img src="img/nav.png" alt="Josué Fonseca" 
+                 class="h-12 w-auto object-contain opacity-90 hover:opacity-100 transition duration-200">
+        </a>
 
-        <!-- Menu mobile -->
-        <ul class="nav-mobile hidden flex-col bg-white shadow p-4 space-y-2 md:hidden" style="color: white;">
-            <li><a href="#hero" class="nav-link">Início</a></li>
-            <li><a href="#about" class="nav-link">Sobre Mim</a></li>
-            <li><a href="#services" class="nav-link">Serviços</a></li>
-            <li><a href="#team" class="nav-link">Equipa</a></li>
-            <li><a href="#feedbacks" class="nav-link">Testemunhos</a></li>
-            <li><a href="#contact" class="nav-link">Contacto</a></li>
+        <!-- LINKS DESKTOP -->
+        <ul class="hidden md:flex space-x-10 text-white text-sm tracking-wide">
+            <li><a href="#hero" class="nav-link hover:text-orange-400 transition">Início</a></li>
+            <li><a href="#about" class="nav-link hover:text-orange-400 transition">Sobre Mim</a></li>
+            <li><a href="#services" class="nav-link hover:text-orange-400 transition">Serviços</a></li>
+            <li><a href="#team" class="nav-link hover:text-orange-400 transition">Equipa</a></li>
+            <li><a href="#feedbacks" class="nav-link hover:text-orange-400 transition">Testemunhos</a></li>
+            <li><a href="#contact" class="nav-link hover:text-orange-400 transition">Contacto</a></li>
         </ul>
-    </nav>
+
+        <!-- BOTÃO MOBILE -->
+        <button id="menu-toggle" 
+                class="md:hidden text-white text-3xl focus:outline-none hover:text-orange-400 transition">
+            ☰
+        </button>
+    </div>
+
+    <!-- MENU MOBILE -->
+    <ul class="nav-mobile hidden flex-col bg-black/60 backdrop-blur-xl 
+               border-t border-white/10 p-5 space-y-3 md:hidden text-white text-lg">
+        <li><a href="#hero" class="nav-link">Início</a></li>
+        <li><a href="#about" class="nav-link">Sobre Mim</a></li>
+        <li><a href="#services" class="nav-link">Serviços</a></li>
+        <li><a href="#team" class="nav-link">Equipa</a></li>
+        <li><a href="#feedbacks" class="nav-link">Testemunhos</a></li>
+        <li><a href="#contact" class="nav-link">Contacto</a></li>
+    </ul>
+</nav>
+
 
 
 <!-- Hero Section Interativo -->
@@ -78,24 +91,79 @@
 </section>
 
 
-    <!-- About Me Section -->
-    <section id="about" class="max-w-4xl mx-auto px-4 py-20 flex flex-col md:flex-row items-center gap-8">
-        <img src="img/contact.jpg" alt="Josué Fonseca" class="rounded-lg w-64 h-64 object-cover shadow-lg">
-        <div>
-            <h2 class="text-4xl font-montserrat mb-4">Sobre Mim</h2>
-            <p class="text-lg md:text-xl text-gray-700">
-                Sentes que o teu desporto, aquilo que mais amavas, está a começar a desgastar-te — e não sabes como
-                mudar isso?
-                Eu também já o senti. O meu nome é Josué e, provavelmente tal como tu, cresci a sonhar uma coisa: ser
-                atleta
-                profissional
-                Pratiquei e competi em várias modalidades - desde futebol, natação, voleibol, a futebol americano.
-                Ganhei
-                medalhas, fui capitão, adorei competir. Por fora, parecia estar tudo bem! Mas por dentro… nem sempre era
-                assim... Saber Mais
-            </p>
+<!-- About Me Section -->
+<section id="about" class="relative max-w-6xl mx-auto px-6 py-24">
+    
+    <!-- Background shape -->
+    <div class="absolute inset-0 -z-10 opacity-10"
+         style="background: radial-gradient(circle at 20% 30%, #ff7a1a, transparent 60%);">
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-10 items-start">
+
+        <!-- Coluna esquerda compacta -->
+        <div class="flex flex-col gap-6 md:sticky md:top-24">
+            <h2 class="text-5xl font-extrabold tracking-tight leading-tight">
+                Quem Sou<br><span class="text-orange-600">De Verdade</span>
+            </h2>
+
+            <img src="img/contact.jpg" 
+                 class="rounded-3xl w-full h-100 object-cover shadow-xl 
+                        rotate-2 hover:rotate-0 transition-transform duration-500 ease-out">
+
         </div>
-    </section>
+
+        <!-- Coluna de manifesto -->
+        <div class="md:col-span-2">
+            <div class="bg-white/60 backdrop-blur-md p-10 rounded-3xl shadow-xl border border-orange-100">
+
+                <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                    O meu nome é Josué. Tal como tu, cresci a sonhar em ser atleta profissional. Pratiquei e competi em várias modalidades – futebol, natação, voleibol, futebol americano. Ganhei medalhas, fui capitão, adorei competir. Por fora, parecia estar tudo bem… mas por dentro nem sempre.
+                </p>
+
+
+                <p class="text-xl text-gray-700 leading-relaxed mb-10">
+                    Hoje, como Psicólogo, ajudo atletas, equipas, pais e treinadores a não passarem pelo mesmo. Porque sei como é esforçar-se… e sentir que não chega. Amar o desporto… e sentir que ele te está a esmagar. Com o apoio certo, o desporto volta a ser leve. E volta a ser teu.
+                </p>
+
+                <!-- Destaques em duas colunas estilo revista -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
+                    <div>
+                        <h3 class="text-orange-600 font-bold text-2xl mb-3">O Começo</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Cresci a acreditar que ia ser atleta profissional. Vivia para treinar, competir, ganhar. Era tudo o que eu conhecia.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-orange-600 font-bold text-2xl mb-3">A Queda Invisível</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Por fora? Medalhas, troféus, liderança. Por dentro? Pressão, desgaste, silêncio. <em>E ninguém via isso.</em>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Frase de impacto -->
+                <blockquote class="border-l-4 border-orange-500 pl-6 italic text-2xl text-gray-800 mb-10">
+                    “O corpo aguenta. A cabeça é que nem sempre acompanha.”
+                </blockquote>
+
+                <!-- CTA futuristic -->
+        <div class="flex justify-center gap-4 flex-wrap">
+            <button onclick="scrollToContact()"
+                class="px-8 py-3 bg-gradient-to-r from-orange-400 to-red-500 text-white font-semibold rounded-xl shadow-2xl hover:scale-105 hover:shadow-orange-500/50 transition-transform duration-300">
+                Agendar Consulta
+            </button>
+        </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
 
 
     <!-- Services Section -->
@@ -231,9 +299,9 @@
 
         <!-- Member 1 -->
         <div class="team-card mb-16 ml-8 flex flex-col md:flex-row md:items-center group cursor-pointer"
-            data-title="Emanuel Dias" data-desc="<div class='w-24 h-24 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105'>
+            data-title="Emanuel Dias" data-desc="<div class='flex justify-center gap-4 flex-wrap'>   <div class='w-40 h-40 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105'>
                 <img src='img/team1.jpg' alt='Emanuel Dias' class='w-full h-full object-cover'>
-            </div> </br>
+            </div></div> </br>
                                 <ul class='text-left space-y-2'>
                                     <li class='flex'>
                                         <span class='text-orange-500 mr-2'>✓</span>
@@ -269,9 +337,9 @@
 
         <!-- Member 2 -->
         <div class="team-card mb-16 ml-8 flex flex-col md:flex-row-reverse md:items-center group cursor-pointer"
-            data-title="Tiago Costa" data-desc="<div class='w-24 h-24 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105'>
+            data-title="Tiago Costa" data-desc="<div class='flex justify-center gap-4 flex-wrap'>   <div class='w-40 h-40 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105'>
                 <img src='img/team2.jpg' alt='Tiago Costa' class='w-full h-full object-cover'>
-            </div></br>
+            </div></div></br>
                                 <ul class='text-left space-y-2'>
                                      <li class='flex'>
                                         <span class='text-orange-500 mr-2'>✓</span>
@@ -306,9 +374,9 @@
 
         <!-- Member 3 -->
         <div class="team-card mb-16 ml-8 flex flex-col md:flex-row md:items-center group cursor-pointer"
-            data-title="Andreia Ferraz" data-desc="<div class='w-24 h-24 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105'>
+            data-title="Andreia Ferraz" data-desc="<div class='flex justify-center gap-4 flex-wrap'>   <div class='w-40 h-40 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105'>
                 <img src='img/team3.JPG' alt='Andreia Ferraz' class='w-full h-full object-cover'>
-            </div></br>
+            </div></div></br>
                                 <ul class='text-left space-y-2'>
                                      <li class='flex'>
                                         <span class='text-orange-500 mr-2'>✓</span>
@@ -339,9 +407,9 @@
 
         <!-- Member 4 -->
         <div class="team-card mb-16 ml-8 flex flex-col md:flex-row-reverse md:items-center group cursor-pointer"
-            data-title="Catarina Ribeiro" data-desc="<div class='w-24 h-24 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105'>
+            data-title="Catarina Ribeiro" data-desc="<div class='flex justify-center gap-4 flex-wrap'>   <div class='w-40 h-40 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105'>
                 <img src='img/team4.png' alt='Catarina Ribeiro' class='w-full h-full object-cover'>
-            </div></br>
+            </div></div></br>
                                 <ul class='text-left space-y-2'>
                                      <li class='flex'>
                                         <span class='text-orange-500 mr-2'>✓</span>
@@ -372,9 +440,9 @@
 
         <!-- Member 5 -->
         <div class="team-card mb-16 ml-8 flex flex-col md:flex-row md:items-center group cursor-pointer"
-            data-title="Nuno Ferreira" data-desc="<div class='w-24 h-24 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105'>
+            data-title="Nuno Ferreira" data-desc="<div class='flex justify-center gap-4 flex-wrap'>   <div class='w-40 h-40 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105'>
                 <img src='img/team5.png' alt='Nuno Ferreira' class='w-full h-full object-cover'>
-            </div></br>
+            </div></div></br>
                                 <ul class='text-left space-y-2'>
                                      <li class='flex'>
                                         <span class='text-orange-500 mr-2'>✓</span>
@@ -409,9 +477,9 @@
 
         <!-- Member 6 -->
         <div class="team-card ml-8 flex flex-col md:flex-row-reverse md:items-center group cursor-pointer"
-            data-title="Mónica Silva" data-desc="<div class='w-24 h-24 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105'>
+            data-title="Mónica Silva" data-desc="<div class='flex justify-center gap-4 flex-wrap'>   <div class='w-40 h-40 rounded-full overflow-hidden shadow-lg bg-white ring-4 ring-orange-500 flex-shrink-0 md:mr-8 transform transition group-hover:scale-105'>
                 <img src='img/team6.png' alt='Mónica Silva' class='w-full h-full object-cover'>
-            </div> </br>
+            </div></div> </br>
                                 <ul class='text-left space-y-2'>
                                      <li class='flex'>
                                         <span class='text-orange-500 mr-2'>✓</span>
@@ -453,64 +521,62 @@
         <div class="bg-white p-6 rounded-lg max-w-md w-full relative">
             <button id="modal-close"
                 class="absolute top-2 right-2 text-gray-500 hover:text-gray-900 text-2xl">&times;</button>
-            <h3 class="text-2xl font-semibold mb-4" id="modal-title"></h3>
+                <div class="flex justify-center gap-4 flex-wrap"> 
+            <h3 class="text-2xl font-semibold mb-4" id="modal-title"></h3>  </div>   
             <p id="modal-desc" class="mb-6"></p>
-                            <button onclick="scrollToContact(); closeModal()"
+            <div class="flex justify-center gap-4 flex-wrap">          
+            <button onclick="scrollToContact(); closeModal()"
                 class="px-8 py-3 bg-gradient-to-r from-orange-400 to-red-500 text-white font-semibold rounded-xl shadow-2xl hover:scale-105 hover:shadow-orange-500/50 transition-transform duration-300">
                 Saber Mais
             </button>
+            </div>    
         </div>
     </div>
 
     <!-- Feedback Section -->
-    <section id="feedbacks" class="max-w-7xl mx-auto px-4 py-20">
-        <h2 class="text-4xl font-montserrat text-center mb-12">Testemunhos</h2>
-        <div class="feedback-carousel relative overflow-hidden">
-            <div class="flex transition-transform duration-500" id="feedback-container">
-                <div class="feedback-card min-w-full p-6 bg-orange-50 rounded-lg shadow text-center">
-                    <p>"Quando contactei o Josué o objetivo era ajudar o meu filho a
-                        recuperar a confiança e a alegria que tinha a jogar futebol. <br>
+<!-- Feedback Section - Editorial / Magazine Style -->
+<section id="feedbacks" class="max-w-7xl mx-auto px-6 py-24 relative bg-gradient-to-b from-white via-orange-50 to-white">
+    <h2 class="text-4xl font-montserrat text-center mb-12">
+        Testemunhos
+    </h2>
 
-                        Tinha receio de voltar a errar, ficando mais nervoso, com dores de cabeça e barriga,
-                        chegando a pedir para não jogar com medo de voltar a errar.<br>
+    <div class="feedback-carousel relative overflow-hidden">
+        <!-- Container flex horizontal -->
+        <div class="flex transition-transform duration-700 ease-in-out" id="feedback-container">
 
-                        Na primeira sessão o meu filho estava muito apreensivo por não conhecer o Psicólogo,
-                        mas logo essa apreensão desapareceu e o meu filho partilhou com situações que nunca
-                        tinha conseguido falar comigo.<br>
-
-                        O meu filho conseguiu adotar estratégias para lidar melhor com as inseguranças e
-                        comentários menos positivos dos colegas. Não só foram exclusivas para o desporto mas
-                        também para a escola, conseguindo melhorar a sua ansiedade antes dos testes e lidar
-                        melhor com as emoções.<br>
-
-                        Um obrigada por ajudar o meu filho a recuperar a confiança e a alegria no
-                        futebol."</p>
-                    <span class="block mt-4 font-semibold">— Atleta, 16 anos</span>
+            <!-- Card 1 -->
+            <div class="feedback-card min-w-full md:min-w-[60%] lg:min-w-[40%] p-10 bg-white rounded-3xl shadow-xl mx-4 relative z-10 hover:scale-105 transition-transform duration-500">
+                <div class="mb-6">
+                    <p class="text-lg leading-relaxed text-gray-700 italic">"Quando contactei o Josué o objetivo era ajudar o meu filho a
+                        recuperar a confiança e a alegria que tinha a jogar futebol. Na primeira sessão o meu filho estava apreensivo mas logo essa apreensão desapareceu. 
+                        Conseguimos melhorar a ansiedade antes dos testes e lidar melhor com as emoções."</p>
                 </div>
-                <div class="feedback-card min-w-full p-6 bg-orange-50 rounded-lg shadow text-center">
-                    <p>"Professional, empathetic, and very supportive."</p>
-                    <span class="block mt-4 font-semibold">— Client B</span>
-                </div>
-                <div class="feedback-card min-w-full p-6 bg-orange-50 rounded-lg shadow text-center">
-                    <p>"Workshops were insightful and engaging."</p>
-                    <span class="block mt-4 font-semibold">— Client C</span>
-                </div>
-                <div class="feedback-card min-w-full p-6 bg-orange-50 rounded-lg shadow text-center">
-                    <p>"Workshops were insightful and engaging."</p>
-                    <span class="block mt-4 font-semibold">— Client C</span>
-                </div>
-                <div class="feedback-card min-w-full p-6 bg-orange-50 rounded-lg shadow text-center">
-                    <p>"Workshops were insightful and engaging."</p>
-                    <span class="block mt-4 font-semibold">— Client C</span>
-                </div>
+                <span class="block font-bold text-orange-600 text-right">— Atleta, 16 anos</span>
             </div>
-            <button
-                class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow prev-btn">‹</button>
-            <button
-                class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow next-btn">›</button>
-            <div class="flex justify-center mt-4 space-x-2" id="feedback-dots"></div>
+
+            <!-- Card 2 -->
+            <div class="feedback-card min-w-full md:min-w-[60%] lg:min-w-[40%] p-10 bg-white rounded-3xl shadow-xl mx-4 relative z-10 hover:scale-105 transition-transform duration-500">
+                <p class="text-lg leading-relaxed text-gray-700 italic">"Professional, empathetic, and very supportive."</p>
+                <span class="block font-bold text-orange-600 text-right mt-4">— Client B</span>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="feedback-card min-w-full md:min-w-[60%] lg:min-w-[40%] p-10 bg-white rounded-3xl shadow-xl mx-4 relative z-10 hover:scale-105 transition-transform duration-500">
+                <p class="text-lg leading-relaxed text-gray-700 italic">"Workshops were insightful and engaging."</p>
+                <span class="block font-bold text-orange-600 text-right mt-4">— Client C</span>
+            </div>
+
         </div>
-    </section>
+
+        <!-- Buttons -->
+        <button class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-orange-50 prev-btn transition-colors">‹</button>
+        <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-orange-50 next-btn transition-colors">›</button>
+
+        <!-- Dots -->
+        <div class="flex justify-center mt-8 space-x-3" id="feedback-dots"></div>
+    </div>
+</section>
+
 
 <!-- Contact Section -->
 <section id="contact" class="max-w-5xl mx-auto px-6 py-24 bg-gradient-to-b from-orange-50 to-white relative overflow-hidden">
